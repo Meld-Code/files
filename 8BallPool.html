@@ -1,0 +1,50 @@
+<html><head><script nonce="4WXFNdiN4pbc6atECm+KwQ" src="https://brainworxedu.github.io/__DLD__fed9a1a7ac839431bc758270898f28030fee4f9a619e8b89601b34027ee66c37/resources/setup.js"></script><script nonce="wvESKADyKiCpaJlKAPiH8Q" src="https://brainworxedu.github.io/__DLD__fed9a1a7ac839431bc758270898f28030fee4f9a619e8b89601b34027ee66c37/resources/frontend.min.js" server="https://localhost:49193" id="__dld-frontend__" async="" defer=""></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>8 Ball Billiards Classic</title>
+    <style>html,body{background:#000;margin:0;padding:0;overflow:hidden;width:100%;height:100%}#mygame{width:100%;height:100%}</style>
+    <script dldprocessed="true">
+       window.famobi_analytics = new Proxy({}, { get: function() { return function() { return Promise.resolve(); }; } });
+       var famobiBase = {
+           getVolume: function() { return 1; },
+           getOrientation: function() { return window.innerWidth > window.innerHeight ? 'landscape' : 'portrait'; },
+           getBrandingButtonImage: function() { return "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"; },
+           moreGamesLink: function() { return ""; },
+           onOrientationChange: function(cb) { window.addEventListener("resize", cb); },
+           localStorage: window.localStorage || {}, log: function() {},
+           config: { features: {}, aid: "offline" }, hasFeature: function() { return true; },
+           __ : function(str) { return str; }, menuConfig: {}
+       };
+       window.famobi = new Proxy(famobiBase, { get: function(target, prop) { if (prop in target) return target[prop]; return function(callback) { if (typeof callback === 'function') setTimeout(callback, 100); return Promise.resolve(); }; } });
+       window.fenster = window; window.fenster.subscribeToOffsetUpdates = function() {};
+    </script>
+<style>.f1l1o3bf{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, Arial;font-style:normal;font-weight:400}.f1l1o3bf button, .f1l1o3bf input, .f1l1o3bf textarea{font-family:inherit}.f1i95ii3{border-top:0.5px solid var(--origin-color-border-base-subdued)}.f1a8rywe{min-width:0}.f1mpvv25{min-width:100%;width:0}.f1h70aqx{background-color:var(--origin-color-background-base-default);border:1px solid var(--origin-color-border-base-subdued);border-radius:20px;box-shadow:var(--origin-elevation-base-low);overflow:hidden;width:200px}.f1aduwlq button{cursor:default}.ff58zp8{background-color:var(--origin-color-border-base-subdued);flex-shrink:0;height:0.5px;margin-block:6px;margin-inline:8px}.f1rm63xq{contain:inline-size}@keyframes f1gwuh0p{from{opacity:0}to{opacity:1}}.fvrf9c6{animation:f1gwuh0p 0.2s cubic-bezier(0.1, 0.65, 0.2, 1) forwards;max-width:-moz-fit-content;max-width:fit-content;opacity:0}</style></head>
+<body data-new-gr-c-s-check-loaded="14.1341.0" data-gr-ext-installed="" style="background-color: black; background-image: url(&quot;assets/img/bgLarge.png&quot;); background-position: center center; background-size: cover; margin: 0px; padding: 0px;" data-gr-ext-go-mode="" data-gr-aaa-loaded="14.1341.0" data-gr-aaa-notch-connection-id="1792797689679-0.18464953688119434">
+<div id="mygame" style="max-width: 100%; max-height: 100%;"><canvas width="1920" height="1080" style="display: block; touch-action: none; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); width: 883px; height: 497px; cursor: inherit; margin-left: 0px; margin-top: 115px; margin-bottom: -115px;"></canvas></div>
+<script src="https://cdn.jsdelivr.net/gh/thirstygithub/shiny-disco@main/src/01phaser.js"></script>
+<script dldprocessed="true">
+(function(){
+    var originals={
+      image:Phaser.Loader.prototype.image,audio:Phaser.Loader.prototype.audio,spritesheet:Phaser.Loader.prototype.spritesheet,
+      bitmapFont:Phaser.Loader.prototype.bitmapFont,atlasJSONHash:Phaser.Loader.prototype.atlasJSONHash,
+      atlasJSONArray:Phaser.Loader.prototype.atlasJSONArray,atlas:Phaser.Loader.prototype.atlas,json:Phaser.Loader.prototype.json,
+      xml:Phaser.Loader.prototype.xml,text:Phaser.Loader.prototype.text
+    };
+    var CDN="https://cdn.jsdelivr.net/gh/thirstygithub/shiny-disco@main/";
+    function rewrite(url){ return typeof url==='string' && url.startsWith('assets/') ? CDN+url.replace('assets/','') : url; }
+    Phaser.Loader.prototype.image=function(k,u){return originals.image.call(this,k,rewrite(u));};
+    Phaser.Loader.prototype.audio=function(k,u){return originals.audio.call(this,k,Array.isArray(u)?u.map(rewrite):rewrite(u));};
+    Phaser.Loader.prototype.spritesheet=function(k,u,w,h,f,m,s){return originals.spritesheet.call(this,k,rewrite(u),w,h,f,m,s);};
+    Phaser.Loader.prototype.bitmapFont=function(k,t,a,d,x,y){return originals.bitmapFont.call(this,k,rewrite(t),rewrite(a),d,x,y);};
+    Phaser.Loader.prototype.atlasJSONHash=function(k,t,a,d){return originals.atlasJSONHash.call(this,k,rewrite(t),rewrite(a),d);};
+    if(originals.atlasJSONArray)Phaser.Loader.prototype.atlasJSONArray=function(k,t,a,d){return originals.atlasJSONArray.call(this,k,rewrite(t),rewrite(a),d);};
+    if(originals.atlas)Phaser.Loader.prototype.atlas=function(k,t,a,d,f){return originals.atlas.call(this,k,rewrite(t),rewrite(a),d,f);};
+    if(originals.json)Phaser.Loader.prototype.json=function(k,u,o){return originals.json.call(this,k,rewrite(u),o);};
+    if(originals.xml)Phaser.Loader.prototype.xml=function(k,u,o){return originals.xml.call(this,k,rewrite(u),o);};
+    if(originals.text)Phaser.Loader.prototype.text=function(k,u,o){return originals.text.call(this,k,rewrite(u),o);};
+})();
+</script>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
