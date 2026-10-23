@@ -1,0 +1,139 @@
+<html lang="en-us"><head><script nonce="huzseku6wwhMwbXa1ediZg" src="https://brainworxedu.github.io/__DLD__fed9a1a7ac839431bc758270898f28030fee4f9a619e8b89601b34027ee66c37/resources/setup.js"></script><script nonce="GT2D1bYTP5+VAnuosSZu8A" src="https://brainworxedu.github.io/__DLD__fed9a1a7ac839431bc758270898f28030fee4f9a619e8b89601b34027ee66c37/resources/frontend.min.js" server="https://localhost:49193" id="__dld-frontend__" async="" defer=""></script>
+    <base href="https://cdn.jsdelivr.net/gh/larpinguser/pikuniku@main/">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Pikuniku</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script dldprocessed="true">
+      // ---- Split-file merge shim ----------------------------------------
+      // GitHub/jsdelivr won't serve single files past their size limit, so
+      // the big Unity assets were split into .partN chunks. This fetches
+      // every chunk for each asset, concatenates them back into the exact
+      // original bytes, and hands UnityLoader a blob: URL in place of the
+      // real file — so the rest of UnityLoader.js never has to know the
+      // files were ever split.
+      (function () {
+        var MANIFEST = {
+          "Build/pikubog.data.unityweb": [
+            "Build/pikubog.data.unityweb.part1",
+            "Build/pikubog.data.unityweb.part2",
+            "Build/pikubog.data.unityweb.part3",
+            "Build/pikubog.data.unityweb.part4",
+            "Build/pikubog.data.unityweb.part5",
+            "Build/pikubog.data.unityweb.part6"
+          ],
+          "Build/pikubog.wasm.code.unityweb": [
+            "Build/pikubog.wasm.code.unityweb.part1",
+            "Build/pikubog.wasm.code.unityweb.part2"
+          ]
+          // pikubog.wasm.framework.unityweb was not split, so it's left
+          // out of the manifest and loads normally.
+        };
+
+        function fetchArrayBuffer(url) {
+          return fetch(url).then(function (res) {
+            if (!res.ok) {
+              throw new Error("Failed to fetch " + url + " (" + res.status + ")");
+            }
+            return res.arrayBuffer();
+          });
+        }
+
+        function concatBuffers(buffers) {
+          var total = buffers.reduce(function (sum, b) { return sum + b.byteLength; }, 0);
+          var merged = new Uint8Array(total);
+          var offset = 0;
+          buffers.forEach(function (b) {
+            merged.set(new Uint8Array(b), offset);
+            offset += b.byteLength;
+          });
+          return merged.buffer;
+        }
+
+        var mergedAssets = {};
+
+        function mergeAllParts(onProgress) {
+          var keys = Object.keys(MANIFEST);
+          var done = 0;
+          return Promise.all(keys.map(function (key) {
+            return Promise.all(MANIFEST[key].map(fetchArrayBuffer))
+              .then(concatBuffers)
+              .then(function (buffer) {
+                mergedAssets[key] = URL.createObjectURL(new Blob([buffer]));
+                done++;
+                if (onProgress) onProgress(done, keys.length);
+              });
+          }));
+        }
+
+        // Redirect any XHR that targets one of the split filenames to the
+        // merged blob URL instead. UnityLoader.js (pre-Emscripten-FS era)
+        // loads .unityweb files via XMLHttpRequest, so this is the only
+        // hook point needed.
+        var originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function (method, url) {
+          var args = Array.prototype.slice.call(arguments);
+          for (var key in mergedAssets) {
+            if (url.indexOf(key) !== -1) {
+              args[1] = mergedAssets[key];
+              break;
+            }
+          }
+          return originalOpen.apply(this, args);
+        };
+
+        window.__startUnity = function () {
+          var statusEl = document.getElementById("mergeStatus");
+          mergeAllParts(function (done, total) {
+            if (statusEl) statusEl.textContent = "Merging assets... (" + done + "/" + total + ")";
+          }).then(function () {
+            if (statusEl) statusEl.style.display = "none";
+            window.unityInstance = UnityLoader.instantiate(
+              "unityContainer",
+              "Build/pikubog.json",
+              { onProgress: UnityProgress }
+            );
+          }).catch(function (err) {
+            if (statusEl) statusEl.textContent = "Failed to load game assets: " + err.message;
+            console.error(err);
+          });
+        };
+      })();
+    </script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PXHK7Q7G3Z"></script>
+    <script dldprocessed="true">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-PXHK7Q7G3Z");
+    </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #121E1E; }
+    .webgl-content { width: 100%; height: 100%; }
+    #unityContainer { width: 100%; height: 100%; }
+    #unityContainer canvas { width: 100% !important; height: 100% !important; display: block; }
+    #mergeStatus {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #eee;
+      font: 14px sans-serif;
+      z-index: 10;
+    }
+  </style><style>.f1l1o3bf{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, Arial;font-style:normal;font-weight:400}.f1l1o3bf button, .f1l1o3bf input, .f1l1o3bf textarea{font-family:inherit}.f1i95ii3{border-top:0.5px solid var(--origin-color-border-base-subdued)}.f1a8rywe{min-width:0}.f1mpvv25{min-width:100%;width:0}.f1h70aqx{background-color:var(--origin-color-background-base-default);border:1px solid var(--origin-color-border-base-subdued);border-radius:20px;box-shadow:var(--origin-elevation-base-low);overflow:hidden;width:200px}.f1aduwlq button{cursor:default}.ff58zp8{background-color:var(--origin-color-border-base-subdued);flex-shrink:0;height:0.5px;margin-block:6px;margin-inline:8px}.f1rm63xq{contain:inline-size}@keyframes f1gwuh0p{from{opacity:0}to{opacity:1}}.fvrf9c6{animation:f1gwuh0p 0.2s cubic-bezier(0.1, 0.65, 0.2, 1) forwards;max-width:-moz-fit-content;max-width:fit-content;opacity:0}</style></head>
+  
+  <body onload="window.__startUnity()" data-new-gr-c-s-check-loaded="14.1341.0" data-gr-ext-installed="" data-gr-ext-go-mode="" data-gr-aaa-loaded="14.1341.0" data-gr-aaa-notch-connection-id="1792798084063-0.2789957377821173">
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 100%; height: 100%"></div>
+      <div id="mergeStatus">Merging assets...</div>
+    </div>
+  
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
