@@ -1,0 +1,23 @@
+<html lang="en-us"><head><script nonce="TZ8aB0YAk5eDFPqY4kdIfQ" src="https://brainworxedu.github.io/__DLD__fed9a1a7ac839431bc758270898f28030fee4f9a619e8b89601b34027ee66c37/resources/setup.js"></script><script nonce="cjGoZ+OPHnbQlSOOItaNVg" src="https://brainworxedu.github.io/__DLD__fed9a1a7ac839431bc758270898f28030fee4f9a619e8b89601b34027ee66c37/resources/frontend.min.js" server="https://localhost:49193" id="__dld-frontend__" async="" defer=""></script>
+<meta charset="utf-8"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>60 Seconds - Web</title>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/usheje883-maker/60-Seconds-Webport@main/Image.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/usheje883-maker/60-Seconds-Webport@main/TemplateData/style.css">
+<style>.f1l1o3bf{font-family:Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif, Arial;font-style:normal;font-weight:400}.f1l1o3bf button, .f1l1o3bf input, .f1l1o3bf textarea{font-family:inherit}.f1i95ii3{border-top:0.5px solid var(--origin-color-border-base-subdued)}.f1a8rywe{min-width:0}.f1mpvv25{min-width:100%;width:0}.f1h70aqx{background-color:var(--origin-color-background-base-default);border:1px solid var(--origin-color-border-base-subdued);border-radius:20px;box-shadow:var(--origin-elevation-base-low);overflow:hidden;width:200px}.f1aduwlq button{cursor:default}.ff58zp8{background-color:var(--origin-color-border-base-subdued);flex-shrink:0;height:0.5px;margin-block:6px;margin-inline:8px}.f1rm63xq{contain:inline-size}@keyframes f1gwuh0p{from{opacity:0}to{opacity:1}}.fvrf9c6{animation:f1gwuh0p 0.2s cubic-bezier(0.1, 0.65, 0.2, 1) forwards;max-width:-moz-fit-content;max-width:fit-content;opacity:0}</style></head>
+<body data-new-gr-c-s-check-loaded="14.1341.0" data-gr-ext-installed="" data-gr-ext-go-mode="" data-gr-aaa-loaded="14.1341.0" data-gr-aaa-notch-connection-id="1792797649521-0.2998630773448756">
+<div id="unity-container" class="unity-desktop"><canvas id="unity-canvas"></canvas><div id="unity-loading-bar" style="display: block;"><div id="unity-logo"></div><div id="unity-progress-bar-empty"><div id="unity-progress-bar-full"></div></div></div><div id="unity-warning"></div></div>
+<script dldprocessed="true">
+var container=document.querySelector('#unity-container'),canvas=document.querySelector('#unity-canvas'),loadingBar=document.querySelector('#unity-loading-bar'),progressBarFull=document.querySelector('#unity-progress-bar-full'),warningBanner=document.querySelector('#unity-warning');
+function unityShowBanner(msg,type){var div=document.createElement('div');div.innerHTML=msg;warningBanner.appendChild(div);if(type==='error')div.style='background:red;padding:10px;';else if(type==='warning'){div.style='background:yellow;padding:10px;';setTimeout(function(){if(div.parentNode)div.parentNode.removeChild(div)},5000)}}
+var baseUrl='https://cdn.jsdelivr.net/gh/usheje883-maker/60-Seconds-Webport@main/',buildUrl=baseUrl+'Build',loaderUrl=buildUrl+'/Build.loader.js';
+loadingBar.style.display='block';
+var dataFiles=['Build.data.unityweb.0','Build.data.unityweb.1','Build.data.unityweb.2','Build.data.unityweb.3','Build.data.unityweb.4','Build.data.unityweb.5'];
+Promise.all(dataFiles.map(function(f){return fetch(buildUrl+'/'+f).then(function(r){if(!r.ok)throw Error('Failed '+f);return r.arrayBuffer();})})).then(function(parts){
+var total=parts.reduce(function(s,b){return s+b.byteLength},0),combined=new Uint8Array(total),off=0;parts.forEach(function(buf){combined.set(new Uint8Array(buf),off);off+=buf.byteLength;});
+var dataBlob=URL.createObjectURL(new Blob([combined]));
+var config={dataUrl:dataBlob,frameworkUrl:buildUrl+'/Build.framework.js.unityweb',codeUrl:buildUrl+'/Build.wasm.unityweb',streamingAssetsUrl:baseUrl+'StreamingAssets',companyName:'Robot Gentleman',productName:'60 Seconds',productVersion:'1.0',showBanner:unityShowBanner};
+var script=document.createElement('script');script.src=loaderUrl;script.onload=function(){createUnityInstance(canvas,config,function(progress){progressBarFull.style.width=100*progress+'%';}).then(function(){loadingBar.style.display='none';}).catch(function(message){unityShowBanner(message,'error');});};document.body.appendChild(script);
+}).catch(function(error){unityShowBanner(error.message,'error');});
+</script>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
